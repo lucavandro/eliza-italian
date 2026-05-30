@@ -5,26 +5,36 @@
 
 var elizaInitials = [
 "Come va? Mi dica il suo problema",
-// additions (not original)
 "Per favore, mi dica cosa la turba",
-"C'è qualcosa che la turba?"
+"C'è qualcosa che la turba?",
+"Si senta libero di parlare di ciò che vuole.",
+"Da cosa vuole cominciare oggi?"
 ];
 
 var elizaFinals = [
-"Arrivederci. È stato piacevole parlare con lei",
-// additions (not original)
-"Arrivederci.  È stata una piacevole chiacchierata",
-"Arrivederci.  Non vedo l'ora di un nuovo incontro.",
-"È stato un bell'incontro, vero? Ma il tempo è finito.   Arrivederci.",
-"Forse vorresti parlarne di più in un prossimo incontro ?   Arrivederci."
+"Arrivederci. È stato piacevole parlare con lei.",
+"Arrivederci. È stata una piacevole chiacchierata.",
+"Arrivederci. Non vedo l'ora di un nuovo incontro.",
+"È stato un bell'incontro, vero? Ma il tempo è finito. Arrivederci.",
+"Forse vorrà parlarne di più in un prossimo incontro. Arrivederci.",
+"La sessione è terminata. Ne riparleremo la prossima volta.",
+"Grazie per questa conversazione. A risentirci.",
+"Le auguro una buona giornata. Arrivederci."
 ];
 
 var elizaQuits = [
 "arrivederci",
 "addio",
 "finito",
+"basta",
+"stop",
+"esci",
+"esci",
 "exit",
-"quit"
+"quit",
+"chiudi",
+"fine",
+"non voglio più parlare"
 ];
 
 var elizaPres = [
@@ -55,15 +65,15 @@ var elizaPosts = [
 ];
 
 var elizaSynons = {
-"essere": ["sono", "è", "siamo", "ero"],
-"credenza": ["sensazione", "pensiero", "sento", "voglio","sento","credo"],
-"desiderio": ["voglio", "bisogno"],
-"dimenticare":["dimentico","non ricordo","dimenticato"],
-"ricordare":["ricordo","non ricordo"],
+"essere": ["sono", "è", "sei", "siamo", "siete", "ero", "era", "eravamo"],
+"credenza": ["sensazione", "pensiero", "sento", "voglio", "credo", "penso", "ritengo", "opinione"],
+"desiderio": ["voglio", "bisogno", "desidero", "vorrei"],
+"dimenticare": ["dimentico", "non ricordo", "dimenticato", "scordo", "dimentichi"],
+"ricordare": ["ricordo", "non ricordo", "rammento", "ricordi"],
 "tutti": ["chiunque", "nessuno", "ognuno"],
-"famiglia": ["madre", "mamma", "padre", "papà", "sorella", "fratello", "moglie", "bambino", "bambini", "suocera", "suocero","zio","ragazza","ragazzo"],
-"felice": ["contento", "sereno", "soddisfatto","felicissimo"],
-"triste": ["infelice", "depresso", "stufo", "turbato","tristissimo"]
+"famiglia": ["madre", "mamma", "padre", "papà", "sorella", "fratello", "moglie", "bambino", "bambini", "suocera", "suocero", "zio", "ragazza", "ragazzo", "marito", "figlio", "figlia", "nonno", "nonna", "cugino"],
+"felice": ["contento", "sereno", "soddisfatto", "felicissimo", "allegro", "gioioso", "serena"],
+"triste": ["infelice", "depresso", "stufo", "turbato", "tristissimo", "giù", "abbattuto", "mortificato", "depressa"]
 };
 
 var elizaKeywords = [
@@ -317,18 +327,18 @@ var elizaKeywords = [
      "E se non avesse mai (3) ?",
      "Avere (3) cosa a che vedere con questa discussione ?"
   ]],
- ["* sono* @triste *", [
-     "Mi dispiace saperla (3).",
-     "Pensa che parlare con me l'aiuterà a non essere più (3) ?",
-     "Non dev'essere bello essere (3).",
-     "Mi può dire che cosa l'ha resa (3) ?"
-  ]],
- ["* sono* @felice *", [
-     "Come l'ho aiutata a essere (3) ?",
-     "Il trattamento l'ha aiutata a essere (3) ?",
-     "Cosa la rende (3) in questo momento ?",
-     "Mi può spiegare perché è improvvisamente(3) ?"
-  ]],
+  ["* sono * @triste *", [
+      "Mi dispiace saperla (3).",
+      "Pensa che parlare con me l'aiuterà a non essere più (3) ?",
+      "Non dev'essere bello essere (3).",
+      "Mi può dire che cosa l'ha resa (3) ?"
+   ]],
+  ["* sono * @felice *", [
+      "Come l'ho aiutata a essere (3) ?",
+      "Il trattamento l'ha aiutata a essere (3) ?",
+      "Cosa la rende (3) in questo momento ?",
+      "Mi può spiegare perché è improvvisamente (3) ?"
+   ]],
  ["* ero *", [
      "goto ero"
   ]],
@@ -483,24 +493,22 @@ var elizaKeywords = [
      "goto cosa"
   ]]
 ]],
-["perché ", 0, [
- ["*", [
-     "È quello il vero motivo ?",
-     "Non le vengono in mente altri motivi ?",
-     "Pensa che questa motivazione spieghi tutto ?",
-     "Ci potrebbero essere altre ragioni ?"
-  ]]
-]],
 ["perché", 0, [
- ["* perché lei non *", [
-     "Pensa che io non (2) ?",
-     "Forse lo farò a breve.",
-     "Dovrebbe essere lei a (2) ?",
-     "goto cosa"
-  ]],
- ["*", [
-     "goto cosa"
-  ]]
+  ["* perché lei non *", [
+      "Pensa che io non (2) ?",
+      "Forse lo farò a breve.",
+      "Dovrebbe essere lei a (2) ?",
+      "goto cosa"
+   ]],
+  ["* perché *", [
+      "È quello il vero motivo ?",
+      "Non le vengono in mente altri motivi ?",
+      "Pensa che questa motivazione spieghi tutto ?",
+      "Ci potrebbero essere altre ragioni ?"
+   ]],
+  ["*", [
+      "goto cosa"
+   ]]
 ]],
 ["tutti", 2, [
  ["* @tutti *", [
@@ -516,19 +524,19 @@ var elizaKeywords = [
   ]]
 ]],
 ["ognuno", 2, [
- ["*", [
-     "goto leitti"
-  ]]
+  ["*", [
+      "goto tutti"
+   ]]
 ]],
 ["chiunque", 2, [
- ["*", [
-     "goto leitti"
-  ]]
+  ["*", [
+      "goto tutti"
+   ]]
 ]],
 ["nessuno", 2, [
- ["*", [
-     "goto leitti"
-  ]]
+  ["*", [
+      "goto tutti"
+   ]]
 ]],
 ["sempre", 1, [
  ["*", [
@@ -569,25 +577,36 @@ var elizaKeywords = [
   ]]
 ]],
 ["salve", 0, [
- ["salve", [
-     "Salve",
-     "Salve di nuovo, che cosa la affligge?",
-     "Ho già detto salve, non abbia reticenze"
-  ]]
+  ["salve", [
+      "Salve",
+      "Salve di nuovo, che cosa la affligge?",
+      "Ho già detto salve, non abbia reticenze"
+   ]]
+]],
+["grazie", 0, [
+  ["*", [
+      "Prego, è un piacere.",
+      "Non c'è di che.",
+      "Mi fa piacere che si trovi bene.",
+      "Si figuri."
+   ]]
+]],
+["buongiorno", 0, [
+  ["*", [
+      "Buongiorno. Come si sente oggi?",
+      "Buongiorno. Di cosa vuole parlare?",
+      "Buongiorno a lei. Si accomodi."
+   ]]
+]],
+["buonasera", 0, [
+  ["*", [
+      "Buonasera. Come posso aiutarla?",
+      "Buonasera. Di cosa desidera parlare?"
+   ]]
 ]]
 
 ];
 
-// regexp/replacement pairs to be performed as final cleanings
-// here: cleanings for multiple bots talking to each other
-var elizaPostTransforms = [
-	/ old old/g, " old",
-	/\bthey were( not)? me\b/g, "it was$1 me",
-	/\bthey are( not)? me\b/g, "it is$1 me",
-	/Are they( always)? me\b/, "it is$1 me",
-	/\bthat your( own)? (\w+)( now)? \?/, "that you have your$1 $2 ?",
-	/\bI to have (\w+)/, "I have $1",
-	/Earlier you said your( own)? (\w+)( now)?\./, "Earlier you talked about your $2."
-];
+var elizaPostTransforms = [];
 
 // eof

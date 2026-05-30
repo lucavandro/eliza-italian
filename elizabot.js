@@ -207,7 +207,7 @@ ElizaBot.prototype.transform = function(text) {
 	text=text.replace(/@#\$%\^&\*\(\)_\+=~`\{\[\}\]\|:;<>\/\\\t/g, ' ');
 	text=text.replace(/\s+-+\s+/g, '.');
 	text=text.replace(/\s*[,\.\?!;]+\s*/g, '.');
-	text=text.replace(/\s*\bbut\b\s*/g, '.');
+	text=text.replace(/\s*\bma\b\s*/g, '.');
 	text=text.replace(/\s{2,}/g, ' ');
 	// split text in part sentences and loop through them
 	var parts=text.split('.');
@@ -329,10 +329,8 @@ ElizaBot.prototype._postTransform = function(s) {
 		}
 	}
 	// capitalize first char (v.1.1: work around lambda function)
-	if (this.capitalizeFirstLetter) {
-		var re=/^([a-z])/;
-		var m=re.exec(s);
-		if (m) s=m[0].toUpperCase()+s.substring(1);
+	if (this.capitalizeFirstLetter && s.length>0) {
+		s=s.charAt(0).toUpperCase()+s.substring(1);
 	}
 	return s;
 }
