@@ -97,7 +97,7 @@ body {
 .term-header .status {
 	color: #1a6b1a;
 	letter-spacing: 0;
-	font-size: 12px;
+	font-size: 1rem;
 }
 
 #e_display {
@@ -107,7 +107,7 @@ body {
 	border: none;
 	color: #33ff33;
 	font-family: 'Courier New', Courier, monospace;
-	font-size: 15px;
+	font-size: 1.1rem;
 	line-height: 1.5;
 	padding: 8px;
 	resize: none;
@@ -146,7 +146,7 @@ body {
 
 .prompt {
 	color: #33ff33;
-	font-size: 15px;
+	font-size: 1.1rem;
 	font-weight: bold;
 	text-shadow: 0 0 8px rgba(51, 255, 51, 0.4);
 	flex-shrink: 0;
@@ -158,7 +158,7 @@ body {
 	border: none;
 	color: #33ff33;
 	font-family: 'Courier New', Courier, monospace;
-	font-size: 15px;
+	font-size: 1.1rem;
 	outline: none;
 	text-shadow: 0 0 8px rgba(51, 255, 51, 0.3);
 	caret-color: #33ff33;
@@ -178,7 +178,7 @@ body {
 	color: #33ff33;
 	border: 1px solid #1a3a1a;
 	font-family: 'Courier New', Courier, monospace;
-	font-size: 13px;
+	font-size: 0.9rem;
 	padding: 6px 18px;
 	cursor: pointer;
 	text-transform: uppercase;
@@ -200,7 +200,7 @@ body {
 
 .term-footer {
 	color: #1a5a1a;
-	font-size: 11px;
+	font-size: 0.8px;
 	text-align: center;
 	padding-top: 14px;
 	letter-spacing: 1px;
@@ -219,7 +219,7 @@ body {
 
 .info-toggle {
 	color: #1a5a1a;
-	font-size: 11px;
+	font-size: 0.8px;
 	cursor: pointer;
 	text-align: center;
 	padding-top: 6px;
@@ -269,10 +269,10 @@ body {
 	}
 	#e_display {
 		height: 240px;
-		font-size: 13px;
+		font-size: 0.9rem;
 	}
 	.term-header {
-		font-size: 11px;
+		font-size: 0.8px;
 		flex-direction: column;
 		gap: 4px;
 	}
@@ -281,7 +281,7 @@ body {
 	}
 	.term-buttons button {
 		flex: 1;
-		font-size: 11px;
+		font-size: 0.8px;
 		padding: 5px 10px;
 	}
 }
