@@ -12,6 +12,7 @@ body {
 	justify-content: center;
 	font-family: 'Courier New', Courier, monospace;
 	padding: 20px;
+	font-size: 18px;
 }
 
 .terminal {
@@ -200,7 +201,7 @@ body {
 
 .term-footer {
 	color: #1a5a1a;
-	font-size: 0.8px;
+	font-size:0.8rem;
 	text-align: center;
 	padding-top: 14px;
 	letter-spacing: 1px;
@@ -219,7 +220,7 @@ body {
 
 .info-toggle {
 	color: #1a5a1a;
-	font-size: 0.8px;
+	font-size:0.8rem;
 	cursor: pointer;
 	text-align: center;
 	padding-top: 6px;
@@ -237,7 +238,7 @@ body {
 	overflow: hidden;
 	transition: max-height 0.4s ease;
 	color: #1a6b1a;
-	font-size: 12px;
+	font-size: 0.9em;
 	line-height: 1.6;
 	position: relative;
 	z-index: 1;
@@ -272,7 +273,7 @@ body {
 		font-size: 0.9rem;
 	}
 	.term-header {
-		font-size: 0.8px;
+		font-size:0.8rem;
 		flex-direction: column;
 		gap: 4px;
 	}
@@ -281,7 +282,7 @@ body {
 	}
 	.term-buttons button {
 		flex: 1;
-		font-size: 0.8px;
+		font-size:0.8rem;
 		padding: 5px 10px;
 	}
 }
